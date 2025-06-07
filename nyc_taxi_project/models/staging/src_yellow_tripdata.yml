@@ -1,0 +1,11 @@
+# File: models/staging/src_yellow_tripdata.yml
+
+version: 2
+
+sources:
+  - name: nytaxidata
+    database: NYTAXIDATA
+    schema: PUBLIC
+    tables:
+      - name: YELLOW_TRIPDATA
+
