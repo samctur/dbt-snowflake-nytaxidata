@@ -1,0 +1,9 @@
+# File: models/staging/stg_yellow_tripdata.yml
+
+version: 2
+
+models:
+  - name: stg_yellow_tripdata
+    description: "Parsed and cleaned yellow trip data from the VARIANT column"
+    columns:
+      - name: vendor_id

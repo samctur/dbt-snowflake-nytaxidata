@@ -6,6 +6,8 @@ Try running the following commands:
 - dbt run
 - dbt test
 
+### Docs
+To get started, run `dbt docs generate` to build the documentation site, and then `dbt docs serve` to view it in your browser.
 
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)

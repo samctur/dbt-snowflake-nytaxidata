@@ -8,4 +8,3 @@ sources:
     schema: PUBLIC
     tables:
       - name: YELLOW_TRIPDATA
-
