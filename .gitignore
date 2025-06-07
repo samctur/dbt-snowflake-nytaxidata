@@ -1,0 +1,30 @@
+# Virtual environment (if using one)
+dbt-env/
+venv/
+.env/
+.venv/
+
+# dbt artifacts (build outputs)
+dbt_modules/
+dbt_packages/
+target/
+dbt_packages.yml.lock
+manifest.json
+run_results.json
+logs/
+pip-log.txt
+
+# System + editor files
+.DS_Store
+__pycache__/
+*.py[cod]
+*.swp
+*.swo
+*.idea/
+*.vscode/
+
+# Secrets
+secrets.env
+.env
+profiles.yml  # if you store credentials here (see below!)
+
