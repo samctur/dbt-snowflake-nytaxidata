@@ -7,6 +7,6 @@ select
     round(avg(fare_amount), 2) as avg_fare,
     round(avg(tip_amount), 2) as avg_tip,
     round(avg(total_amount), 2) as avg_total
-from {{ ref('stg_yellow_tripdata') }}
+from {{ ref('int_yellow_tripdata_enriched') }}
 group by 1
 order by 1

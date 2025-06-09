@@ -34,3 +34,16 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+
+seeds:
+  nyc_taxi_project:
+    quote_columns: false
+    taxi_zone_lookup:
+      column_types:
+        locationid: int
+        borough: string
+        zone: string
+        service_zone: string
+
+
