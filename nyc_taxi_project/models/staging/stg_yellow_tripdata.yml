@@ -7,3 +7,106 @@ models:
     description: "Parsed and cleaned yellow trip data from the VARIANT column"
     columns:
       - name: vendor_id
+        description: "Unique identifier for the taxi vendor."
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 6, 7]
+
+      - name: passenger_count
+        description: "The number of passengers in the vehicle during the trip."
+        tests:
+          - not_null
+
+      - name: trip_distance
+        description: "The distance of the trip in miles."
+        tests:
+          - not_null
+
+      - name: rate_code_id
+        description: "Identifier for rate codes in taxi trips."
+        tests:
+          - accepted_values:
+              values: [1, 2, 3, 4, 5, 6, 99]
+
+      - name: store_and_fwd_flag
+        description: "Indicates whether the trip record was stored and forwarded. ('Y' or 'N')"
+        tests:
+          - accepted_values:
+              values: ["Y", "N"]
+
+      - name: pickup_location_id
+        description: "Unique identifier for the pick-up location."
+        tests:
+          - not_null
+
+      - name: dropoff_location_id
+        description: "Unique identifier for the drop-off location."
+        tests:
+          - not_null
+
+      - name: payment_type
+        description: "Indicator of the payment method used during a taxi trip."
+        tests:
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5]
+
+      - name: fare_amount
+        description: "Monetary value representing the fare amount for a taxi ride."
+        tests:
+          - not_null
+
+      - name: extra
+        description: "Amount paid for additional services or fees."
+        tests:
+          - not_null
+
+      - name: mta_tax
+        description: "The amount of tax paid to the Metropolitan Transportation Authority (MTA)."
+        tests:
+          - not_null
+
+      - name: tip_amount
+        description: "The amount of tip given in the transaction."
+        tests:
+          - not_null
+
+      - name: tolls_amount
+        description: "The amount paid for tolls."
+        tests:
+          - not_null
+
+      - name: improvement_surcharge
+        description: "The amount of improvement surcharge applied to the taxi fare."
+        tests:
+          - not_null
+
+      - name: total_amount
+        description: "The total amount paid in dollars for the taxi ride."
+        tests:
+          - not_null
+
+      - name: congestion_surcharge
+        description: "Additional fee for trips during peak congestion hours."
+        tests:
+          - not_null
+
+      - name: cbd_congestion_fee
+        description: "Congestion fee for Central Business District (CBD) trips."
+        tests:
+          - not_null
+
+      - name: airport_fee
+        description: "Additional fee charged for trips to/from airports."
+        tests:
+          - not_null
+
+      - name: pickup_datetime
+        description: "Timestamp when the trip started (pickup time)."
+        tests:
+          - not_null
+
+      - name: dropoff_datetime
+        description: "Timestamp when the trip ended (dropoff time)."
+        tests:
+          - not_null

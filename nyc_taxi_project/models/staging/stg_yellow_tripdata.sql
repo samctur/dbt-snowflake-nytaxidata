@@ -2,7 +2,7 @@
 
 select
     variant_col:"VendorID"::int as vendor_id,
-    variant_col:"passenger_count"::int as passenger_count,
+    coalesce(variant_col:"passenger_count"::int, 0) as passenger_count,
     variant_col:"trip_distance"::float as trip_distance,
     variant_col:"RatecodeID"::int as rate_code_id,
     variant_col:"store_and_fwd_flag"::string as store_and_fwd_flag,
@@ -16,9 +16,9 @@ select
     variant_col:"tolls_amount"::float as tolls_amount,
     variant_col:"improvement_surcharge"::float as improvement_surcharge,
     variant_col:"total_amount"::float as total_amount,
-    variant_col:"congestion_surcharge"::float as congestion_surcharge,
+    coalesce(variant_col:"congestion_surcharge"::float, 0) as congestion_surcharge,
     variant_col:"cbd_congestion_fee"::float as cbd_congestion_fee,
-    variant_col:"Airport_fee"::float as airport_fee,
+    coalesce(variant_col:"Airport_fee"::float, 0) as airport_fee,
 
     -- Convert timestamps from microseconds since epoch
     to_timestamp_ltz(variant_col:"tpep_pickup_datetime"::number / 1e6) as pickup_datetime,
